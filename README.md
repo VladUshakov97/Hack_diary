@@ -4,16 +4,40 @@
 * Улучшить плохие оценки
 * Удалить выговоры
 * Добавить похвалу по предмету
-```bash
-   fix_marks(schoolkid)
-   remove_chastisements(schoolkid)
-   create_commendation("Ваше ФИО", "Предмет")
- ```
-### Использование
-1. Убедитесь, что у вас установлен Python и Django
-2. Запустите сервер с помощью ```python manage.py runserver```
-3. Откройте Django shell командой ```python manage.py shell```
-4. Впишите в script.py ФИО учителя, ваше ФИО и название предмета
-5. Затем скопируйте содержимое script.py и нажмите Enter:
 
+### Требования
+* Python 3.8+
+* Django 3.2+
+* Проект электронного дневника с моделями:
+  Schoolkid, Mark, Lesson, Teacher, Subject,
+  Chastisement, Commendation
+
+### Установка
+1. Убедитесь, что у вас установлен Python и Django:
+```
+python --version
+pip install django
+```
+2. Подключитесь к проекту электронного дневника.
+3. Поместите файл scripts.py в корень проекта (рядом с manage.py).
+
+### Использование
+1. Запустите сервер:
+```
+python manage.py runserver
+```
+2. Откройте Django shell:
+```
+python manage.py shell
+```
+3. Импортируйте функции scripts.py
+```
+from datacenter.scripts import fix_marks, remove_chastisements, create_commendation
+```
+4. Запустите нужную функцию, указав ФИО ученика и (для похвалы) название предмета:
+```
+fix_marks("Ваше ФИО")
+remove_chastisements("Ваше ФИО")
+create_commendation("Ваше ФИО", "Предмет")
+```
  
