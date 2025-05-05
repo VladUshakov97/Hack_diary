@@ -18,8 +18,10 @@ def kid_name(full_name):
     try:
         return Schoolkid.objects.get(full_name__contains=full_name)
     except Schoolkid.DoesNotExist:
-        print("Ученик с именем '{full_name}', не найден")
-        return None
+        print("Ученик с именем '{full_name}', не найден".)
+    except MultipleObjectsReturned:
+        print("Найдено несколько учеников с именем "{full_name}". ")
+    return None
 
 
 def fix_marks(schoolkid):
